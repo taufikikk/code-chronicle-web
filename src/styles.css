@@ -1,0 +1,76 @@
+:root {
+  --bg: #1e1e1e;
+  --sidebar: #252526;
+  --panel: #1e1e1e;
+  --tab: #2d2d2d;
+  --tab-active: #1e1e1e;
+  --titlebar: #323233;
+  --statusbar: #007acc;
+  --border: #3c3c3c;
+  --text: #d4d4d4;
+  --text-dim: #808080;
+  --text-muted: #6a6a6a;
+  --keyword: #569cd6;
+  --string: #ce9178;
+  --comment: #6a9955;
+  --fn: #dcdcaa;
+  --variable: #9cdcfe;
+  --type: #4ec9b0;
+  --number: #b5cea8;
+  --warning: #cca700;
+  --error: #f14c4c;
+  --success: #4ec9b0;
+  --accent: #007acc;
+  --line-num: #858585;
+  --selection: #264f78;
+  --mono: "Fira Code", "Cascadia Code", "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--mono);
+}
+
+textarea:focus, input:focus, button:focus {
+  outline: none;
+}
